@@ -1,0 +1,38 @@
+<!-- BEGIN offer quantities of only multiples of a given factor for a given pricetype -->
+<script type="text/javascript">
+
+// ------------------------
+// what's the ID of the pricetype you want to restrict?
+var pricetype = 93;
+// restrict quantity to multiples of what?
+var factor = 4;
+// ------------------------
+$('.tnew-selectseating-form-pricetype-select[title=' + pricetype + ']').children().each(function () {
+  if ($(this).attr('value') != 0 && $(this).attr('value') % factor != 0) {
+    $(this).remove();
+  }
+});
+
+</script>
+<!-- END offer quantities of only multiples of a given factor for a given pricetype -->
+
+
+
+<!-- BEGIN show only a given quantity for a given pricetype -->
+<script type="text/javascript">
+
+// ------------------------
+// what's the ID of the pricetype you want to restrict?
+var pricetype = 168;
+// allow only what quantity?
+var quantity = 2;
+// ------------------------
+
+$('.tnew-selectseating-form-pricetype-select[title=' + pricetype + ']').children().each(function () {
+  if ($(this).attr('value') != 0 && $(this).attr('value') != quantity) {
+    $(this).remove();
+  }
+});
+
+</script>
+<!-- END show only a given quantity for a given pricetype -->
