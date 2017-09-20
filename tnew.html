@@ -36,3 +36,24 @@ $('.tnew-selectseating-form-pricetype-select[title=' + pricetype + ']').children
 
 </script>
 <!-- END show only a given quantity for a given pricetype -->
+
+
+<!-- BEGIN show only one of a given list of quantities for a given pricetype -->
+<script type="text/javascript">
+
+// ------------------------
+// what's the ID of the pricetype you want to restrict?
+var pricetype = 1;
+// allow only what quantities?
+var quantities = [1,2,3,4];
+// ------------------------
+
+$('.tnew-selectseating-form-pricetype-select[title=' + pricetype + ']').children().each(function () {
+  var value = $(this).attr('value');
+  if (value != 0 && quantities.indexOf(parseInt(value)) == -1) {
+    $(this).remove();
+  }
+});
+
+</script>
+<!-- END show only a given quantity for a given pricetype -->
